@@ -1,4 +1,4 @@
 package org.inframincer.ioc
 
-class BookRepository {
+interface BookRepository {
 }
