@@ -1,13 +1,15 @@
 package org.inframincer.ioc
 
-import org.springframework.context.support.ClassPathXmlApplicationContext
+import org.springframework.context.ApplicationContext
+import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 
 class IocApplication
 
 fun main(args: Array<String>) {
 //    runApplication<IocApplication>(*args)
-    val context = ClassPathXmlApplicationContext("application.xml")
+//    val context = ClassPathXmlApplicationContext("application.xml")
+    val context: ApplicationContext = AnnotationConfigApplicationContext(ApplicationConfig::class.java)
     val beanDefinitionNames = Array(context.beanDefinitionCount) {
         i -> context.beanDefinitionNames[i]
     }
