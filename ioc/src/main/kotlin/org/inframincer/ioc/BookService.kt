@@ -12,6 +12,6 @@ class BookService {
 //            BookRepository()
 //        }
 
-    @Autowired
+    @Autowired(required = false)
     lateinit var bookRepository: BookRepository
 }
