@@ -13,4 +13,7 @@ fun main(args: Array<String>) {
     }
     for (name in beanDefinitionNames)
         println(name)
+
+    val bookService = context.getBean("bookService") as BookService
+    println(bookService.bookRepository != null)
 }
