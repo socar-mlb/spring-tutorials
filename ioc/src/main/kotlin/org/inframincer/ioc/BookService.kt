@@ -14,6 +14,9 @@ class BookService {
 //        }
 
     @Autowired
+    lateinit var myBook1Repository: BookRepository
+
+    @Autowired
     @Qualifier("myBook2Repository")
     lateinit var bookRepository: BookRepository
 
@@ -21,6 +24,8 @@ class BookService {
     lateinit var bookRepositories: Array<BookRepository>
 
     fun printBookRepository() {
+        println(myBook1Repository.javaClass.name)
+
         println(bookRepository.javaClass.name)
 
         bookRepositories.forEach {
