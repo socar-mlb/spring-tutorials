@@ -3,6 +3,7 @@ package org.inframincer.ioc
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Service
+import javax.annotation.PostConstruct
 
 @Service
 class BookService {
@@ -23,6 +24,7 @@ class BookService {
     @Autowired
     lateinit var bookRepositories: Array<BookRepository>
 
+    @PostConstruct
     fun printBookRepository() {
         println(myBook1Repository.javaClass.name)
 

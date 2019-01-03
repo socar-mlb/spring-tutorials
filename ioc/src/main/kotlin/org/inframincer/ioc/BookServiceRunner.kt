@@ -12,6 +12,6 @@ class BookServiceRunner : ApplicationRunner {
     lateinit var bookService: BookService
 
     override fun run(args: ApplicationArguments?) {
-        bookService.printBookRepository()
+//        bookService.printBookRepository()
     }
 }
