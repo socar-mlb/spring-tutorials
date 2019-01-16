@@ -20,6 +20,4 @@ class MessageSourceRunner : ApplicationRunner {
         Locale.setDefault(Locale.KOREA)
         println(messageSource.getMessage("greeting", arrayOf("developer"), Locale.KOREA))
     }
-
-
 }

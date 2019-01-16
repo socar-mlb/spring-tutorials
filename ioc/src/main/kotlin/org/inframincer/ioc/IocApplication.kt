@@ -6,15 +6,16 @@ import org.springframework.context.MessageSource
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.PropertySource
 import org.springframework.context.support.ReloadableResourceBundleMessageSource
-import org.springframework.scheduling.annotation.EnableAsync
 
 @SpringBootApplication
 @PropertySource("classpath:/app.properties")
-@EnableAsync
 class IocApplication
 
 fun main(args: Array<String>) {
-    runApplication<IocApplication>(*args)
+    val application = runApplication<IocApplication>(*args)
+    application.start()
+    Thread.sleep(5000)
+    application.stop()
 
     @Bean
     fun messageSource(): MessageSource {
