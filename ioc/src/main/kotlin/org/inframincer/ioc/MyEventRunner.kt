@@ -19,5 +19,6 @@ class MyEventRunner : ApplicationRunner {
     override fun run(args: ApplicationArguments?) {
 //        context.publishEvent(MyEvent(this, 100))
         publishEvent.publishEvent(MyEvent(this, 100))
+        publishEvent.publishEvent(MyPojoEvent(this, 100))
     }
 }
