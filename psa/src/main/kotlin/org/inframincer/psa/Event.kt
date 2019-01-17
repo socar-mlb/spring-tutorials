@@ -4,7 +4,12 @@ import javax.validation.constraints.Email
 import javax.validation.constraints.Min
 import javax.validation.constraints.NotEmpty
 
-class Event {
+class Event() {
+
+    constructor(id: Int) : this() {
+        this.id = id
+    }
+
     var id: Int = 0
 
     @NotEmpty
