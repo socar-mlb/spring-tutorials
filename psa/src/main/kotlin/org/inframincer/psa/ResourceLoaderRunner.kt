@@ -8,7 +8,7 @@ import org.springframework.core.io.ResourceLoader
 import org.springframework.stereotype.Component
 import java.io.File
 
-@Component
+//@Component
 class ResourceLoaderRunner : ApplicationRunner {
 
     @Autowired
