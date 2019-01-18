@@ -12,6 +12,4 @@ class PsaApplicationTests {
     @Test
     fun contextLoads() {
     }
-
 }
-
