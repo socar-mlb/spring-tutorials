@@ -9,4 +9,3 @@ class SpelApplication
 fun main(args: Array<String>) {
     runApplication<SpelApplication>(*args)
 }
-
