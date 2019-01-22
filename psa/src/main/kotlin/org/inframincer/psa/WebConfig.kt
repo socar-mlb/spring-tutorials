@@ -8,6 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 class WebConfig : WebMvcConfigurer {
 
     override fun addFormatters(registry: FormatterRegistry) {
-        registry.addConverter(EventConverter.StringToEventConverter())
+//        registry.addConverter(EventConverter.StringToEventConverter())
+        registry.addFormatter(EventFormatter())
     }
 }
