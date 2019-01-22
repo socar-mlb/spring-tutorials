@@ -3,7 +3,7 @@ package org.inframincer.spel
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
-import org.springframework.boot.context.properties.ConfigurationProperties
+import org.springframework.expression.spel.standard.SpelExpressionParser
 import org.springframework.stereotype.Component
 
 @Component
@@ -41,5 +41,10 @@ class SpELRunner : ApplicationRunner {
         println(myValue)
         println(isMyValue100)
         println(sampleBeanData)
+
+        val parser = SpelExpressionParser()
+        val expression = parser.parseExpression("2 + 100")
+        val value = expression.getValue(Int.javaClass)
+        println(value)
     }
 }
