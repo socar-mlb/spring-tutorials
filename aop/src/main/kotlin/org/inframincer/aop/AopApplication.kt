@@ -1,5 +1,7 @@
 package org.inframincer.aop
 
+import org.springframework.boot.SpringApplication
+import org.springframework.boot.WebApplicationType
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
@@ -7,6 +9,10 @@ import org.springframework.boot.runApplication
 class AopApplication
 
 fun main(args: Array<String>) {
-    runApplication<AopApplication>(*args)
+//    runApplication<AopApplication>(*args)
+
+    val application = SpringApplication(AopApplication::class.java)
+    application.webApplicationType = WebApplicationType.NONE
+    application.run(*args)
 }
 
