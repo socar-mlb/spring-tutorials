@@ -9,12 +9,12 @@ import org.springframework.stereotype.Component
 @Aspect
 class PerformanceAspect {
 
-    @Around("execution(* org.inframincer..*.EventService.*(..))")
+//    @Around("execution(* org.inframincer..*.EventService.*(..))")
+    @Around("@annotation(PerformanceLogging)")
     @Throws(Throwable::class)
     fun logPerformance(proceedingJoinPoint: ProceedingJoinPoint): Any? {
         val begin = System.currentTimeMillis()
         val returnValue = proceedingJoinPoint.proceed()
-        println(returnValue)
         println(System.currentTimeMillis() - begin)
         return returnValue
     }
